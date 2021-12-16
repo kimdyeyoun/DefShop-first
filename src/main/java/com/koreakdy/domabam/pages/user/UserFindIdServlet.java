@@ -15,7 +15,7 @@ import java.io.IOException;
 public class UserFindIdServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        Utils.displayView("아이디 찾기", "user/findId", req ,res);
+        Utils.displayView("아이디 찾기", "user/findId", req, res);
     }
 
     @Override
