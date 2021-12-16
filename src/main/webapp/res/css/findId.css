@@ -1,0 +1,32 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+
+    font-family:sans-serif;
+    scroll-behavior: smooth;
+}
+
+.id{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    width: 500px;
+    height: 180px;
+    border: 1px solid #000;
+    padding-top: 120px;
+    margin: 100px;
+    border-radius: 20px;
+}
+
+.save{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    padding-top: 10px;
+}
