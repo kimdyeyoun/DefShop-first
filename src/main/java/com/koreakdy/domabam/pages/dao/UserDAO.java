@@ -90,6 +90,8 @@ public class UserDAO {
                 UserEntity vo = new UserEntity();
                 vo.setUid(rs.getString("uid"));
                 return vo;
+            }else {
+                return new UserEntity();
             }
 
         } catch (Exception e) {
@@ -98,5 +100,48 @@ public class UserDAO {
             DbUtils.close(con, ps, rs);
         }
         return null;
+    }
+
+    public static UserEntity findUpw(UserEntity entity){
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String sql = "SELECT iuser FROM def_user WHERE phone = ? AND uid = ?";
+
+        try {
+            con = DbUtils.getCon();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, entity.getPhone());
+            ps.setString(2, entity.getUid());
+            rs = ps.executeQuery();
+
+            if (rs.next()){
+                UserEntity vo = new UserEntity();
+                vo.setIuser(rs.getInt("iuser"));
+                return vo;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DbUtils.close(con, ps, rs);
+        }
+        return null;
+    }
+
+    public static int findUpwUpd(UserEntity entity){
+        Connection con = null;
+        PreparedStatement ps = null;
+        String sql = "UPDATE def_user SET upw = ? WHERE iuser = ?";
+        try {
+            con = DbUtils.getCon();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, entity.getIuser());
+            return ps.executeUpdate();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            DbUtils.close(con, ps);
+        }
+        return 0;
     }
 }

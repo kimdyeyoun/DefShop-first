@@ -92,7 +92,7 @@ h2 {
     border: 1px solid lightgray;
     outline: none;
 }
-.forgot_pw{
+.forgot{
     display: flex;
     flex-direction: row;
     margin-left: 30px;
@@ -218,4 +218,6 @@ h2 {
 .forgot_id{
     cursor: pointer;
 }
-
+.forgot_pw{
+    cursor: pointer;
+}

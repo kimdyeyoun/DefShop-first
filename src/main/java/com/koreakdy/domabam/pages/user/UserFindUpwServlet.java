@@ -11,31 +11,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/user/findId")
-public class UserFindIdServlet extends HttpServlet {
+@WebServlet("/user/findUpw")
+public class UserFindUpwServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        Utils.displayView("아이디 찾기", "user/findId", req, res);
-
+        Utils.displayView("비밀번호 찾기", "user/findUpw", req, res);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String nm = req.getParameter("nm");
-        String phone = req.getParameter("phone");
 
-        UserEntity entity = new UserEntity();
-        entity.setNm(nm);
-        entity.setPhone(phone);
-        String chuid = UserDAO.findId(entity).getUid();
-
-
-        if (chuid == null){
-            res.sendRedirect("/user/login?err=1");
-            return;
-        }
-        String uid = Utils.subString(UserDAO.findId(entity).getUid());
-        req.setAttribute("id", uid);
-        doGet(req, res);
     }
 }

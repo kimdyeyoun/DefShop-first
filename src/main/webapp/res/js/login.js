@@ -9,19 +9,14 @@ forgot_id.addEventListener('click',function(){
     whereId.style.display = 'block';
 })
 
-close.addEventListener('click', function (){
+close.addEventListener('click',function(){
     let whereId = document.getElementById('whereId');
     whereId.style.display = 'none';
 })
 
-save.addEventListener('click', function (){
-    let noneAndblock = document.getElementById('noneAndblock');
-    noneAndblock.style.display = 'none';
-})
-
-save.addEventListener('click', function (){
-    let complet = document.getElementById('complet');
-    complet.style.display = 'block';
+save.addEventListener('click',function(){
     let whereId = document.getElementById('whereId');
     whereId.style.display = 'none';
 })
+
+

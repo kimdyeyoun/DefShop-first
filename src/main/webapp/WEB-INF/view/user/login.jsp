@@ -28,9 +28,9 @@
                 <div class="checkbox">
                     <input type="checkbox" name=""> 아이디 기억하기
                 </div>
-                <div class="forgot_pw">
+                <div class="forgot">
                     <span class="forgot_id">아이디/</span>
-                    <span class="forgot_pw1">비밀번호</span>
+                    <span class="forgot_pw">비밀번호</span>
                 </div>
             </div>
             <div class="submit">
@@ -42,7 +42,7 @@
 
 <div id="whereId" class="modal">
     <div id="noneAndblock">
-        <form action="/user/findId" method="post">
+        <form action="/user/findId" method="post" id="chkId">
             <div class="center"> <input type="text" name="nm" placeholder="이름" required></div>
             <div class="center"> <input type="text" name="phone" placeholder="번호" required></div>
             <div class="center">

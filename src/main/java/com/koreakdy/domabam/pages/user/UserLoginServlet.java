@@ -20,6 +20,10 @@ import java.io.IOException;
 public class UserLoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        int err = Utils.getParameterInt(req, "err");
+        if (err > 0){
+            req.setAttribute("err",  "존재하지 않은 아이디 입니다.");
+        }
         Utils.displayView("로그인", "user/login", req, res);
     }
 

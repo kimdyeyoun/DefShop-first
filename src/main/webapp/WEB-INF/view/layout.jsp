@@ -52,6 +52,19 @@
         <div>대표자명 : 조성우</div>
     </div>
 </div>
+
+<c:if test="${requestScope.err ne null}">
+    <script>
+        var body = document.querySelector('body');
+        body.onload = function() {
+            setTimeout(function() {
+                alert('<c:out value="${requestScope.err}"/>');
+                window.location = 'http://localhost:8090/user/login';
+            }, 300);
+        };
+    </script>
+</c:if>
+
 </body>
 </html>
 
