@@ -15,8 +15,11 @@ import java.io.IOException;
 public class UserFindIdServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        int err2 = Utils.getParameterInt(req, "err2");
+        if (err2 > 0) {
+            req.setAttribute("err2", "아이디 또는 번호를 다시 입력하시오.");
+        }
         Utils.displayView("아이디 찾기", "user/findId", req, res);
-
     }
 
     @Override
@@ -27,15 +30,17 @@ public class UserFindIdServlet extends HttpServlet {
         UserEntity entity = new UserEntity();
         entity.setNm(nm);
         entity.setPhone(phone);
-        String chuid = UserDAO.findId(entity).getUid();
 
+        UserEntity chentity = UserDAO.findId(entity);
 
-        if (chuid == null){
+        if(chentity==null){
             res.sendRedirect("/user/login?err=1");
             return;
         }
-        String uid = Utils.subString(UserDAO.findId(entity).getUid());
-        req.setAttribute("id", uid);
+
+        String chuid = Utils.subString(chentity.getUid());
+
+        req.setAttribute("id", chuid);
         doGet(req, res);
     }
 }

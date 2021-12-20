@@ -59,7 +59,7 @@
         body.onload = function() {
             setTimeout(function() {
                 alert('<c:out value="${requestScope.err}"/>');
-                window.location = 'http://localhost:8090/user/login';
+                window.location = document.referrer;//이전페이지 후 새로고침
             }, 300);
         };
     </script>

@@ -1,8 +1,7 @@
 let forgot_id = document.querySelector('.forgot_id')
-let forgot_pw = document.querySelector('.forgot_pw')
 let close = document.querySelector('.close')
-let noneAndblock = document.querySelector('.noneAndblock')
 let save = document.querySelector('.save')
+
 
 forgot_id.addEventListener('click',function(){
     let whereId = document.getElementById('whereId');
@@ -18,5 +17,4 @@ save.addEventListener('click',function(){
     let whereId = document.getElementById('whereId');
     whereId.style.display = 'none';
 })
-
 

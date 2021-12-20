@@ -1,6 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <link rel="stylesheet" href="/res/css/login.css?ver=4">
+<c:if test="${sessionScope.loginUser != null}">
+    <script>
+        alert('잘못된 요청입니다.');
+        document.location.href="http://localhost:8090/page/main";
+    </script>
+</c:if>
 <div class="wrap">
     <div class="login">
         <h2>Log-in</h2>
@@ -42,7 +48,7 @@
 
 <div id="whereId" class="modal">
     <div id="noneAndblock">
-        <form action="/user/findId" method="post" id="chkId">
+        <form action="/user/findId" method="post">
             <div class="center"> <input type="text" name="nm" placeholder="이름" required></div>
             <div class="center"> <input type="text" name="phone" placeholder="번호" required></div>
             <div class="center">

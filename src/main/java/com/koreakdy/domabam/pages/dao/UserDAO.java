@@ -90,8 +90,6 @@ public class UserDAO {
                 UserEntity vo = new UserEntity();
                 vo.setUid(rs.getString("uid"));
                 return vo;
-            }else {
-                return new UserEntity();
             }
 
         } catch (Exception e) {
@@ -135,7 +133,8 @@ public class UserDAO {
         try {
             con = DbUtils.getCon();
             ps = con.prepareStatement(sql);
-            ps.setInt(1, entity.getIuser());
+            ps.setString(1, entity.getUpw());
+            ps.setInt(2, entity.getIuser());
             return ps.executeUpdate();
         }catch (Exception e){
             e.printStackTrace();

@@ -131,9 +131,7 @@ h2 {
     font-size: 1.2em;
     letter-spacing: 2px;
 }
-.noneAndblock{
-    display: block;
-}
+
 
 .center{
     display: flex;
@@ -147,13 +145,6 @@ h2 {
 }
 .close{
     left: 5px;
-}
-
-.center{
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    padding-top: 10px;
 }
 
 .complet{
