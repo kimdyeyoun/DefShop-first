@@ -13,7 +13,7 @@ function findPw(){
         location.reload();
         return false;
     }
-    if (changeUpw.valueOf() == changeUpwConfirm.valueOf()){
+    if (changeUpw.valueOf() == changeUpwConfirm.valueOf()){//input안 text내용 비교
         alert('비밀번호가 변경되었습니다')
         document.location.href="http://localhost:8090/user/login";
         return true;

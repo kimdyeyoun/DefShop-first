@@ -58,6 +58,8 @@ public class Utils {
                 .replace("'","&#39");
     }
 
+
+    //id 뒷자리 4번째부터 *로치환
     public static String subString(String str){
         return str.substring(0, 4) + str.substring(4, str.length()).replaceAll("\\S", "*");
     }
