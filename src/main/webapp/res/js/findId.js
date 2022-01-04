@@ -17,3 +17,11 @@ save.addEventListener('click',function(){
     let wherePw = document.getElementById('wherePw');
     wherePw.style.display = 'none';
 })
+
+let wherePwElem = document.querySelector('#whereId');
+var submitBtnElem = wherePwElem.querySelector('input[type=submit]');
+
+submitBtnElem.addEventListener('click', function (e){
+   e.preventDefault();
+   let url = '/user/findPw'
+});

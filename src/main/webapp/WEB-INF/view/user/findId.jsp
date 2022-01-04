@@ -19,7 +19,7 @@
 </div>
 
 <div id="wherePw" class="modal">
-        <form action="/user/findPw" method="get" id="chkId">
+        <form id="chkId">
                 <div> <input type="text" name="uid" placeholder="아이디" required></div>
                 <div> <input type="text" name="phone" placeholder="번호" required></div>
                 <div>

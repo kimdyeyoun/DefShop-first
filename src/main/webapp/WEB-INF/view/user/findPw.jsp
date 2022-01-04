@@ -10,7 +10,7 @@
 </c:if>
 <div class="pw">
     <div class="center">
-        <form action="/user/updUpw" method="post" id="findPwfrm" onsubmit="return findPw();">
+        <form action="/user/updUpw" method="post" id="findPwfrm"onsubmit ="return findPw();">
             <div>
                 <input type="hidden" name="iuser" value="${iuser}">
                 <div><input type="password" id="changeUpw" name="changeUpw" placeholder="변경 비밀번호"></div>

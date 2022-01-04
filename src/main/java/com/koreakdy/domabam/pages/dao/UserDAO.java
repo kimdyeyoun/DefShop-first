@@ -43,7 +43,7 @@ public class UserDAO {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String sql = "SELECT iuser, upw, nm, email, nickname, gender FROM def_user WHERE uid = ?";
+        String sql = "SELECT upw, nm, email, nickname, gender FROM def_user WHERE uid = ?";
 
         try {
             con = DbUtils.getCon();
